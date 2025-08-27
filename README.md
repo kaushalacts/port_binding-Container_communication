@@ -1,4 +1,4 @@
-# Docker Challenge Day 13: Port Binding & Container Communication 🐳
+ # Docker : Port Binding & Container Communication 🐳
 
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
@@ -64,8 +64,8 @@ docker-compose --version
 ### Clone and Run
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/docker-challenge-day13.git
-cd docker-challenge-day13
+git clone https://github.com/kaushalacts/port_binding-Container_communication.git
+cd port_binding-Container_communication
 
 # Start all services
 docker-compose up -d
@@ -74,7 +74,6 @@ docker-compose up -d
 docker-compose ps
 
 # Access services
-# Nginx: http://localhost:8080
 # PHPMyAdmin: http://localhost:8081 (root/rootpassword)
 ```
 
@@ -117,7 +116,7 @@ services:
     container_name: nginx-container
     ports:
       - "8080:80"  # Change to 9090:80 for second part
-    restart: unless-stopped
+    restart: unless-stopped 
 ```
 
 ```bash
@@ -414,7 +413,7 @@ docker-challenge-day13/
 
 ## 📊 Architecture Diagram
 
-![Docker Architecture](./docs/docker-architecture-diagram.svg)
+
 
 *Complete system architecture showing port binding, container communication, and Docker Compose orchestration*
 
@@ -435,8 +434,6 @@ docker-compose up -d
 sleep 30
 
 # Test Nginx
-echo "Testing Nginx..."
-curl -f http://localhost:8080 || exit 1
 
 # Test PHPMyAdmin
 echo "Testing PHPMyAdmin..."
@@ -453,10 +450,9 @@ docker-compose down
 ```
 
 ### Manual Verification
-1. **Nginx Test**: Navigate to `http://localhost:8080`
-2. **PHPMyAdmin Test**: Navigate to `http://localhost:8081`
-3. **Database Login**: Use `root` / `rootpassword`
-4. **Check testdb**: Verify `testdb` database exists
+1. **PHPMyAdmin Test**: Navigate to `http://localhost:8081`
+2. **Database Login**: Use `root` / `rootpassword`
+3. **Check testdb**: Verify `testdb` database exists
 
 ## 📈 Monitoring
 
@@ -483,34 +479,7 @@ services:
         max-file: "3"
 ```
 
-## 🔄 CI/CD Integration
-
-### GitHub Actions Example
-```yaml
-name: Docker Challenge Day 13
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v2
-      
-      - name: Run tests
-        run: |
-          docker-compose up -d
-          sleep 30
-          ./test.sh
-          docker-compose down
-```
-
+ 
 ## 📚 Resources
 
 ### Official Documentation
@@ -539,8 +508,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### Development Setup
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/docker-challenge-day13.git
-cd docker-challenge-day13
+git clone https://github.com/kaushalacts/port_binding-Container_communication.git
+cd port_binding-Container_communication
 
 # Create feature branch
 git checkout -b feature/your-feature
@@ -556,24 +525,14 @@ git commit -m "Your changes"
 git push origin feature/your-feature
 ```
 
-## 🙏 Acknowledgments
+ 
 
-- Docker Community for excellent documentation
-- MySQL and Nginx teams for reliable container images
-- PHPMyAdmin project for the web interface
-- #100DaysOfCode community for motivation
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
+ 
 ## 🔗 Connect
 
-- 📝 Blog: [Your Hashnode Blog](https://yourblog.hashnode.dev)
-- 💼 LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- 📧 Email: your.email@example.com
-
+ 
+- 💼 LinkedIn: [LinkedIn](https://linkedin.com/in/kaushalacts)
+ 
 ---
 
 **⭐ If this repository helped you learn Docker, please give it a star!**
